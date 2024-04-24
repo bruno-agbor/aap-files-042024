@@ -1,0 +1,16 @@
+---
+
+- hosts: localhost
+  become: true
+  gather_facts: yes
+
+  vars_files:
+     - my_secrets_var_file
+         
+
+  tasks:
+
+     - name: Print encrypted Variable Value
+       debug:
+          msg: "{{ my_secret1 }}"
+
